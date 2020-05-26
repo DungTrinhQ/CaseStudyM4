@@ -1,6 +1,8 @@
 package com.codegym.casestudy.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "contact")
@@ -10,9 +12,11 @@ public class Contact {
     @Column(name = "id", nullable = false)
     private Integer id;
 
+    @NotEmpty
     @Column(name = "name", nullable = false)
     private String name;
 
+    @Email
     @Column(name = "email")
     private String email;
 
