@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <div class="row mt-4">
+    <th:block th:unless="${#lists.isEmpty(contacts)}">
         <div class="table-responsive">
             <h5>List of contacts</h5>
             <table class="table table-bordered table-hover">
@@ -37,31 +37,11 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Ashina Yuen</td>
-                    <td>ashinayuen@gmail.com</td>
-                    <td>0123456789</td>
-                    <td>
-                        <a href="#" class="mr-sm-2 text-primary"><i class="fa fa-pencil"></i></a>
-                        <a href="#" class="text-danger"><i class="fa fa-trash"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Ashina Yuen</td>
-                    <td>ashinayuen@gmail.com</td>
-                    <td>0123456789</td>
-                    <td>
-                        <a href="#" class="mr-sm-2 text-primary"><i class="fa fa-pencil"></i></a>
-                        <a href="#" class="text-danger"><i class="fa fa-trash"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Ashina Yuen</td>
-                    <td>ashinayuen@gmail.com</td>
-                    <td>0123456789</td>
+                <tr th:each="contact,iterStat : ${contacts}">
+                    <th scope="row" th:text="${iterStat.count}"></th>
+                    <td th:text="${contact.name}"></td>
+                    <td th:text="${contact.email}"></td>
+                    <td th:text="${contact.phone}"></td>
                     <td>
                         <a href="#" class="mr-sm-2 text-primary"><i class="fa fa-pencil"></i></a>
                         <a href="#" class="text-danger"><i class="fa fa-trash"></i></a>
@@ -70,7 +50,7 @@
                 </tbody>
             </table>
         </div>
-    </div>
+    </th:block>
 </div><!-- /.container -->
 
 <footer th:replace="layout :: footer"></footer>
