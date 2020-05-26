@@ -9,8 +9,4 @@ import java.util.List;
 @Repository
 public interface ContactRepository extends CrudRepository<Contact, Integer> {
     List<Contact> findByNameContaining(String term);
-
-    Contact findOne(Integer id);
-
-    void delete(Integer id);
 }

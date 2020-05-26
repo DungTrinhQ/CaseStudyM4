@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ContactServiceImpl implements ContactService {
@@ -24,8 +25,8 @@ public class ContactServiceImpl implements ContactService {
     }
 
     @Override
-    public Contact findOne(Integer id) {
-        return contactRepository.findOne(id);
+    public Optional<Contact> findOne(Integer id) {
+        return contactRepository.findById(id);
     }
 
     @Override
@@ -35,6 +36,6 @@ public class ContactServiceImpl implements ContactService {
 
     @Override
     public void delete(Integer id) {
-        contactRepository.delete(id);
+        contactRepository.deleteById(id);
     }
 }

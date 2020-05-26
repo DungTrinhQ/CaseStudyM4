@@ -23,15 +23,7 @@ public class Contact {
     @Column(name = "phone")
     private String phone;
 
-    public Contact() {
-    }
-
-    public Contact(String name, String email, String phone) {
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-    }
-
+    // Entity thi khong can viet ham` constructer
     public Integer getId() {
         return id;
     }

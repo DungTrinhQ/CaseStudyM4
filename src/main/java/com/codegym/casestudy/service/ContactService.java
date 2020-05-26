@@ -3,13 +3,14 @@ package com.codegym.casestudy.service;
 import com.codegym.casestudy.model.Contact;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ContactService {
     Iterable<Contact> findAll();
 
     List<Contact> search(String term);
 
-    Contact findOne(Integer id);
+    Optional<Contact> findOne(Integer id);
 
     void save(Contact contact);
 
