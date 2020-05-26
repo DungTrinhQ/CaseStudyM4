@@ -57,4 +57,11 @@ public class ContactController {
         model.addAttribute("contact", contactService.findOne(id));
         return "form";
     }
+
+    @GetMapping("/contact/{id}/delete")
+    public String delete(@PathVariable int id, RedirectAttributes redirect) {
+        contactService.delete(id);
+        redirect.addFlashAttribute("successMessage", "Deleted contact successfully!");
+        return "redirect:/contact";
+    }
 }
