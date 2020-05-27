@@ -66,6 +66,11 @@
                     </tbody>
                 </table>
             </div>
+            <div>
+                <a th:href="@{'/contact'(page=${contacts.number - 1})}" th:if="${contacts.hasPrevious()}">Previous</a>
+                <span th:text="${contacts.number + 1}"></span>/<span th:text="${contacts.totalPages}"></span>
+                <a th:href="@{'/contact'(page=${contacts.number + 1})}" th:if="${contacts.hasNext()}">Next</a>
+            </div>
         </th:block>
     </div>
 </div><!-- /.container -->

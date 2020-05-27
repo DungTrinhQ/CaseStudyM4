@@ -9,16 +9,8 @@ import org.springframework.context.support.ReloadableResourceBundleMessageSource
 @SpringBootApplication
 public class CasestudyApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(CasestudyApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(CasestudyApplication.class, args);
+    }
 
-
-//	@Bean
-//	public MessageSource messageSource() {
-//		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-//		messageSource.addBasenames("classpath:messages");
-//		messageSource.setDefaultEncoding("UTF-8");
-//		return messageSource;
-//	}
 }

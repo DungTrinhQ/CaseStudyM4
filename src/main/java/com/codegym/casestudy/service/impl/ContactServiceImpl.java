@@ -1,8 +1,11 @@
-package com.codegym.casestudy.service;
+package com.codegym.casestudy.service.impl;
 
 import com.codegym.casestudy.model.Contact;
 import com.codegym.casestudy.repository.ContactRepository;
+import com.codegym.casestudy.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,8 +18,8 @@ public class ContactServiceImpl implements ContactService {
     private ContactRepository contactRepository;
 
     @Override
-    public Iterable<Contact> findAll() {
-        return contactRepository.findAll();
+    public Page<Contact> findAll(Pageable pageable) {
+        return contactRepository.findAll(pageable);
     }
 
     @Override
@@ -25,7 +28,7 @@ public class ContactServiceImpl implements ContactService {
     }
 
     @Override
-    public Optional<Contact> findOne(Integer id) {
+    public Optional<Contact> findOne(Long id) {
         return contactRepository.findById(id);
     }
 
@@ -35,7 +38,7 @@ public class ContactServiceImpl implements ContactService {
     }
 
     @Override
-    public void delete(Integer id) {
+    public void delete(Long id) {
         contactRepository.deleteById(id);
     }
 }

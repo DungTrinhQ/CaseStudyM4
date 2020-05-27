@@ -10,7 +10,7 @@ public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-    private Integer id;
+    private Long id;
 
     @NotEmpty
     @Column(name = "name", nullable = false)
@@ -23,12 +23,16 @@ public class Contact {
     @Column(name = "phone")
     private String phone;
 
-    // Entity thi khong can viet ham` constructer
-    public Integer getId() {
+//    @ManyToOne
+//    @JoinColumn(name = "group_id")
+//    private Group group;
+
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
